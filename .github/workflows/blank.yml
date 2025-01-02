@@ -21,6 +21,10 @@ jobs:
           echo "$SHELL"
           export SHELL=foo
           echo "$SHELL"
+      - name: Test win
+        if: runner.os == 'Windows'
+        run: |
+          Echo env | cmd
       - name: Show C info
         run: |
           touch foo.c

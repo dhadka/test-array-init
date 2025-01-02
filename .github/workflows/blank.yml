@@ -17,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Show env
+        if: runner.os == 'Linux'
         run: |
           echo "$SHELL"
           export SHELL=foo

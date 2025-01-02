@@ -25,7 +25,8 @@ jobs:
       - name: Test win
         if: runner.os == 'Windows'
         run: |
-          Echo env | cmd
+          Echo set FOO=bar | cmd
+          env
       - name: Show C info
         run: |
           touch foo.c

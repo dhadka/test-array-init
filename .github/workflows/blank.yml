@@ -20,7 +20,7 @@ jobs:
         shell: cmd
         if: runner.os == 'Windows'
         run: |
-          foo && foo.cmd && echo Bar
+          where bar
       - name: Test win
         shell: cmd
         if: runner.os == 'Windows'

@@ -16,9 +16,6 @@ jobs:
         os: ['windows-latest']
     steps:
       - uses: actions/checkout@v4
-      - name: Build
-        run: |
-          g++ -o foo.exe foo.c
       - name: Test win
         shell: cmd
         run: |

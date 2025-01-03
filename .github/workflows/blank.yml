@@ -44,4 +44,5 @@ jobs:
         shell: pwsh
         if: runner.os == 'Windows'
         run: |
-          Get-ChildItem Env:
+          $env:PATH='$($env:PATH);foo'
+          $env:PATH

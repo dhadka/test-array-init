@@ -16,30 +16,14 @@ jobs:
         os: [ 'ubuntu-latest', 'windows-latest', 'macos-latest' ]
     steps:
       - uses: actions/checkout@v4
-      - name: Show env
-        if: runner.os == 'Linux'
-        run: |
-          echo "$SHELL"
-          export SHELL=foo
-          echo "$SHELL"
-      - name: Show C info
-        run: |
-          touch foo.c
-          gcc -dM -E -x c foo.c
-      - name: Show C++ info
-        run: |
-          touch foo.cpp
-          g++ -dM -E -x c++ foo.cpp
-      - name: Run test
-        run: |
-          g++ -o test.exe test.cpp
-          ./test.exe
       - name: Test win
         shell: cmd
         if: runner.os == 'Windows'
         run: |
-          where test
-          where test.exe
+          ./foo
+          foo
+          ./foo.cmd
+          foo.cmd
       - name: Test pwsh
         shell: pwsh
         if: runner.os == 'Windows'

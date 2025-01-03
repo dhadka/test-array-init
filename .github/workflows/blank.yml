@@ -43,4 +43,5 @@ jobs:
       - name: Test pwsh
         shell: pwsh
         if: runner.os == 'Windows'
-        run: Get-ChildItem Env:
+        run: |
+          Get-ChildItem Env:

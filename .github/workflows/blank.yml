@@ -20,10 +20,10 @@ jobs:
         shell: cmd
         if: runner.os == 'Windows'
         run: |
-          ./foo
           foo
-          ./foo.cmd
+          ./foo
           foo.cmd
+          ./foo.cmd
       - name: Test pwsh
         shell: pwsh
         if: runner.os == 'Windows'

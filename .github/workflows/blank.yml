@@ -35,7 +35,8 @@ jobs:
           g++ -o test.exe test.cpp
           ./test.exe
       - name: Test win
+        shell: cmd
         if: runner.os == 'Windows'
         run: |
           where test
-          
+          where test.exe

@@ -13,24 +13,24 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'ubuntu-latest', 'windows-latest', 'macos-latest' ]
+        os: ['windows-latest']
     steps:
       - uses: actions/checkout@v4
-      - name: Test win
-        shell: cmd
-        if: runner.os == 'Windows'
+      - name: Build
         run: |
-          where bar
+          g++ -o foo.exe foo.c
       - name: Test win
         shell: cmd
-        if: runner.os == 'Windows'
+        run: |
+          where foo
+      - name: Test win
+        shell: cmd
         run: |
           foo
           foo.cmd
           echo Bar
       - name: Test pwsh
         shell: pwsh
-        if: runner.os == 'Windows'
         run: |
           $env:PATH="$($env:PATH);foo"
           $env:PATH
